@@ -63,8 +63,10 @@ campagna_schermata.full_screen = True
 
 gioca_schermata = Window(app, title="Gioca", width=1920, height=1080, visible = False)
 label_gioca = Label(gioca_schermata.tk, image=bg)
-parola_gioca = Label(text= "GIOVANNI")
+
 label_gioca.place(x=0, y=0)
+
+gioca_schermata.full_screen = True
 
 gioco_finito = Window(app, title="Gioco finito", width=1920, height=1080, visible= False)
 label_finito = Label(gioco_finito.tk, image=bg)
@@ -98,11 +100,16 @@ def chiudi_campagna():
 def chiudi_classifica():
     classifica_schermata.visible = False
 
+
+def gioca_chiudi():
+    gioca_schermata.visible = False
+
+
 def timer():
     gioca_schermata.show()
     start_time = datetime.time(0, 0, 0)
-    now_time = datetime.time(0, 0, 0)
-    while (now_time < start_time + timedelta(seconds=120)):
+    now_time = datetime.time(0, 2, 0)
+    while (now_time < start_time):
     
         if now_time==0:
             gioco_finito.show()
@@ -124,7 +131,9 @@ locale_esci = PushButton(locale_schermata, command = chiudi_locale, image='peppe
 
 gioca_locale = PushButton(locale_schermata, image='peppeeava/gioca.png', command=timer)
 
-classifica_esci = PushButton(classifica_schermata, command = chiudi_classifica, image='peppeeava/esci.png')
+gioca_esci = PushButton(gioca_schermata, image = 'peppeeava/esci.png', command= gioca_chiudi)
+
+classifica_esci = PushButton(classifica_schermata, command = chiudi_classifica, image='peppeeava/esci.png', pady = 0)
 
 ###################################
 
