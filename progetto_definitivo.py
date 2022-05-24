@@ -135,6 +135,8 @@ gioca_esci = PushButton(gioca_schermata, image = 'peppeeava/esci.png', command= 
 
 classifica_esci = PushButton(classifica_schermata, command = chiudi_classifica, image='peppeeava/esci.png', pady = 0)
 
-###################################
+################################### parte funzionale
+
+
 
 app.display()
