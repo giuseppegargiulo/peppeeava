@@ -126,6 +126,8 @@ gioca_locale = PushButton(locale_schermata, image='peppeeava/gioca.png', command
 
 classifica_esci = PushButton(classifica_schermata, command = chiudi_classifica, image='peppeeava/esci.png')
 
-###################################
+################################### parte funzionale
+
+
 
 app.display()
