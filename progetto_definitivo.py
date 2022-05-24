@@ -1,3 +1,4 @@
+from itertools import count
 from multiprocessing.connection import wait
 from guizero import *
 from tkinter import *
@@ -29,7 +30,7 @@ def crea_lista():
             valore_stringa = True
     
 
-
+tempo = 0
 
 
 #APPLICAZIONE
@@ -71,6 +72,9 @@ gioca_schermata.full_screen = True
 gioco_finito = Window(app, title="Gioco finito", width=1920, height=1080, visible= False)
 label_finito = Label(gioco_finito.tk, image=bg)
 label_finito.place(x=0, y=0)
+gioco_finito.full_screen = True
+
+
 
 
 #PULSANTI
@@ -105,19 +109,16 @@ def gioca_chiudi():
     gioca_schermata.visible = False
 
 
-def timer():
+def timer(count):
     gioca_schermata.show()
-    start_time = datetime.time(0, 0, 0)
-    now_time = datetime.time(0, 2, 0)
-    while (now_time < start_time):
     
-        if now_time==0:
-            gioco_finito.show()
-            gioca_schermata.visible= False
-            while now_time>0:
-                print(now_time)
-        
+    label['text']= count
 
+    if count > 0:
+       gioca_schermata.after(1000, timer, count-1)
+        
+label = Label(gioca_schermata.tk, font=('Helvetica', 48), fg= 'white')
+label.place(x= 1600, y=1000)
 
 
 locale = PushButton(app, image='peppeeava/locale.png', command=locale_function)
@@ -129,9 +130,9 @@ locale_esci = PushButton(locale_schermata, command = chiudi_locale, image='peppe
 
 #campagna_esci = PushButton(campagna_schermata, command = chiudi_campagna, image='peppeeava/esci.png')
 
-gioca_locale = PushButton(locale_schermata, image='peppeeava/gioca.png', command=timer)
+gioca_locale = PushButton(locale_schermata, image='peppeeava/gioca.png', command =timer(120))
 
-gioca_esci = PushButton(gioca_schermata, image = 'peppeeava/esci.png', command= gioca_chiudi)
+gioca_esci = PushButton(gioca_schermata, image = 'peppeeava/esci.png', command = gioca_chiudi)
 
 classifica_esci = PushButton(classifica_schermata, command = chiudi_classifica, image='peppeeava/esci.png', pady = 0)
 
