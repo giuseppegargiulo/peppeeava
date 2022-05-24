@@ -100,15 +100,15 @@ def chiudi_classifica():
 
 def timer():
     gioca_schermata.show()
-    start_time = datetime.now()
-    now_time = datetime.now()
+    start_time = datetime.time(0, 0, 0)
+    now_time = datetime.time(0, 0, 0)
     while (now_time < start_time + timedelta(seconds=120)):
-        i = now_time
+    
         if now_time==0:
             gioco_finito.show()
             gioca_schermata.visible= False
-            while i>0:
-                print(i)
+            while now_time>0:
+                print(now_time)
         
 
 
