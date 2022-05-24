@@ -35,7 +35,7 @@ def crea_lista():
 #APPLICAZIONE
 app = App(title = "Ruzz Lightyear", width=1920, height=1080)
 
-bg = PhotoImage(file='Avallonepy/ruzzle/bg.png')
+bg = PhotoImage(file='peppeeava/bg.png')
 label = Label(app.tk, image=bg)
 label.place(x=0, y=0)
 app.full_screen = True
@@ -113,18 +113,18 @@ def timer():
 
 
 
-locale = PushButton(app, image='Avallonepy/ruzzle/locale.png', command=locale_function)
-campagna = PushButton(app, image='Avallonepy/ruzzle/campagna.png', command=campagna_function)
-classifica = PushButton(app, image = 'Avallonepy/ruzzle/classifica.png', command = classifica_function)
-esci = PushButton(app, image='Avallonepy/ruzzle/esci.png', command=esci_function)
+locale = PushButton(app, image='peppeeava/locale.png', command=locale_function)
+campagna = PushButton(app, image='peppeeava/campagna.png', command=campagna_function)
+classifica = PushButton(app, image = 'peppeeava/classifica.png', command = classifica_function)
+esci = PushButton(app, image='peppeeava/esci.png', command=esci_function)
 
-locale_esci = PushButton(locale_schermata, command = chiudi_locale, image='Avallonepy/ruzzle/esci.png')
+locale_esci = PushButton(locale_schermata, command = chiudi_locale, image='peppeeava/esci.png')
 
-#campagna_esci = PushButton(campagna_schermata, command = chiudi_campagna, image='Avallonepy/ruzzle/esci.png')
+#campagna_esci = PushButton(campagna_schermata, command = chiudi_campagna, image='peppeeava/esci.png')
 
-gioca_locale = PushButton(locale_schermata, image='Avallonepy/ruzzle/gioca.png', command=timer)
+gioca_locale = PushButton(locale_schermata, image='peppeeava/gioca.png', command=timer)
 
-classifica_esci = PushButton(classifica_schermata, command = chiudi_classifica, image='Avallonepy/ruzzle/esci.png')
+classifica_esci = PushButton(classifica_schermata, command = chiudi_classifica, image='peppeeava/esci.png')
 
 ###################################
 
