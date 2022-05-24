@@ -32,7 +32,6 @@ def crea_lista():
             valore_stringa = True
     
 
-tempo = 0
 
 
 #APPLICAZIONE
@@ -140,8 +139,8 @@ classifica_esci = PushButton(classifica_schermata, command = chiudi_classifica, 
 
 #CASELLA DI TESTO
 
-parola_inserita = Text(gioca_schermata.tk, text="inserisci una parola possibile: ")
-parola_inserita.place(x=0,y=5)
+parola_inserita = Text(gioca_schermata.tk, width= 20, height= 5)
+parola_inserita.place(x=500,y=500)
 
 ################################### parte funzionale
 
