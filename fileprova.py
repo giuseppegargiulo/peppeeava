@@ -22,10 +22,10 @@ def listaparole(parola_gioca):
         a= permutations(ls,k)
         r.append(a)
         k-=1
-        for z in r:
-            for o in z:
-                for c in o:
-                    dd.append(c)
+    for z in r:
+        for o in z:
+            for c in o:
+                dd.append(c)
 
 def assegnazionescore(parola_utente):
     prl= parola_utente
