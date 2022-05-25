@@ -1,9 +1,10 @@
+import string
 import redis
 from random import *
 from itertools import permutations
 
 
-r = redis.StrictRedis(host='10.255.237.221', port=6379, password='1357642rVi0', db=0)
+r = redis.StrictRedis(host='93.145.175.242', port=63213, password='1357642rVi0', db=0)
 
 r.keys()
 
@@ -26,7 +27,7 @@ lista = []
 anagrammi = []
 str = ''
 
-for i in ls:
+for b in ls:
     permutazioni = permutations(ls, k)
     lista.append(permutazioni)
     k -= 1
@@ -36,8 +37,6 @@ for z in lista:
         for q in o:
             lista_di_liste.append(q)
 
-
-print(lista_di_liste)
 
 
 
@@ -49,14 +48,16 @@ for i in lista_di_liste:
     str = ''
 
 
+
 anagrammi_esistenti = []
 
 for i in anagrammi:
     if (r.sismember(it,i)):
         anagrammi_esistenti.append(i)
 
-print("Le parole esistenti sono: ", anagrammi_esistenti)
+print("Le parole esistenti sono: ")
 
 for i in anagrammi_esistenti:
-    r.sadd("parola", i)    
+    print(i)
+    r.sadd(parola, i)    
 
